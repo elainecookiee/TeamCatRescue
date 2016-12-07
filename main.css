@@ -1,0 +1,182 @@
+
+/*============================================*/
+/*GENERAL*/
+/*============================================*/
+html{
+	font-family: sans-serif;
+	font-size: 1em;
+	text-decoration: none;
+	height: 100%;
+	max-width: 100%;
+}
+
+
+body{
+	margin:0;
+	text-align: center;
+}
+
+h1{
+	text-align: left;
+	font-size: 1.5em;
+}
+
+ul{
+	list-style-type: none;
+	list-style-position: none;
+}
+
+/* unvisited link */
+a:link {
+}
+
+/* visited link */
+a:visited {
+}
+
+/* mouse over link */
+a:hover {
+    cursor:pointer;
+}
+
+/* Active link */
+a.active{
+	color: pink;
+	border-bottom: 1px solid pink;
+}
+
+/*EXTERNAL FONTS*/
+@font-face {
+  font-family: "Gochi Hand";
+  src: url(https://fonts.googleapis.com/css?family=Gochi+Hand) format("truetype");
+}
+h1, ul, div { font-family: "Gochi Hand", sans-serif }
+
+@font-face{
+	font-family: "Calibri";
+	src: url(https://www.fonts.com/font/microsoft-corporation/calibri?QueryFontType=Web&src=GoogleWebFonts) format("truetype");
+}
+p { font-family: sans-serif }
+
+
+
+/*===============================
+ABOUT
+================================*/
+
+.welcome{
+	width: 80%;
+	margin-left: 10%;
+	text-align: justify;
+}
+
+/*Success Stories*/
+div.success{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+div.float{
+	background-color: #e2d6c8;
+	margin: 1em;
+	width: 60%;
+	color: grey;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+#floatr{
+	flex-direction: row-reverse;
+}
+
+.item{
+	padding: 1em;
+}
+
+/*===============================
+INDIVIDUAL CAT
+================================*/
+div#cat.float{
+	position: relative;
+	width: 60%;
+	margin-top: 3em;
+	margin-left: 20%;
+	display: flex;
+	justify-content: flex-start;
+	text-align: left;
+	background-color: #d3d3d3;
+}
+
+/*absolute*/
+.ab{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 50%;
+	background: rgba(0, 0, 0, 0.2);
+	color: white;
+	font-size: 2em;
+	text-align: center;
+}
+
+#story{
+	width: 60%;
+	margin-left:20%;
+	display: flex;
+	flex-direction: column;
+}
+
+#story p{
+	padding: 1em;
+	margin: 0;
+	text-align: left;
+}
+
+/*BOOKING FORM*/
+.book{
+	width: 60%;
+	margin: 1em auto;
+	background-color: grey;
+}
+
+form{
+	padding: 1em;
+}
+
+/*===============================
+FOOTER
+================================*/
+
+footer{
+	background-color: grey;
+	padding: 1em;
+}
+
+
+/*===============================
+MEDIA QUERIES
+================================*/
+
+/*ONE Column Layout*/
+@media screen and (max-width: 660px) {
+	div.float, #floatr{
+		flex-direction: column;
+	}
+	img{
+		width: 100%;
+	}
+	.social{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin: 0;
+	}
+
+	.ab{
+		visibility: hidden;
+	}
+}
