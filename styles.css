@@ -78,13 +78,13 @@ div.float{
     outline-color: #856968;
     background-color: #FCE8E8;
     display:none;
-    padding-bottom: 3em;
+    padding-bottom: 0.5em;
     width: 100%;
 }
 
 #careContent h2 {
     padding-left: 1%;
-    padding-top: 1%;
+    padding-top: 2%;
     font-size: 1.5em;
     font-family: "Gochi Hand", Calibri, sans-serif;
 }
@@ -106,6 +106,26 @@ nav {
     width: 100%;
     align-items: center;
     justify-content: center;
+}
+
+nav>a {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+nav>a:visited {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+nav>a:hover {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+nav>a:active {
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 a {
@@ -150,19 +170,21 @@ a:active {
 
 @media screen and (max-width: 1200px) {
     #careContent {
-        position: relative;
-        outline: solid 3px;
-        outline-color: #856968;
-        background-color: #FCE8E8;
         display: block;
-        padding-bottom: 3em;
-        width: 100%;
     }
     
     .catImages {
-        position: relative;
-        width: 200px;
+        width: 100%;
         float: none;
-        display: none;
+    }
+    
+    div.float {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 700px) { 
+    div.catCare {
+        width: 100%;
     }
 }
