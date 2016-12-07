@@ -1,67 +1,10 @@
-body {
-   
-}
-
-::selection {
-    background: #F69C9D;
-}
-
-::-moz-selection {
-    background: #F69C9D;
-}
-
-h2 {
-    font-family: "Gochi Hand", Calibri, sans-serif;
-    font-size: 1.5em;
-    line-height: 1;
-    margin: 0.5em;
-}
-
-.careOrg {
-    display: flex;
-    justify-content: center;
-	align-items: center;
-}
-
-.catImages {
-    width: 400px;
-}
-
-.textCont {
-    padding: 1em;
-}
-
-div.catCare{
-    width: 60%;
-    padding-top: 1%;
-	flex-direction: column;
-    justify-content: center;
-	align-items: center;
-}
-
-div.float{
-/*	background-color: #e2d6c8;*/
-    position: relative;
-	margin-top: 1em;
-    margin-bottom: 1em;
-	width: 100%;
-	color: black;
-    font-family: Calibari, sans-serif;
-    font-size: 1em;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-    text-align: justify;
-}
+/* /////////////////////
+///////// IDs //////////
+///////////////////// */
 
 #floatr{
 	flex-direction: row-reverse;
     position: relative;
-}
-
-.item{
-	padding: 1em;
 }
 
 /* Main website logo */
@@ -92,6 +35,75 @@ div.float{
 #careContent ul {
     font-size: 1.1em;
     list-style-image: url(assets/list.png);
+}
+
+/* /////////////////////////
+///////// CLASSES //////////
+///////////////////////// */
+
+.careOrg {
+    display: flex;
+    justify-content: center;
+	align-items: center;
+}
+
+.catImages {
+    width: 400px;
+}
+
+.textCont {
+    padding: 1em;
+}
+
+.item{
+	padding: 1em;
+}
+
+/* //////////////////////
+///////// MAIN //////////
+////////////////////// */
+
+body {
+   
+}
+
+::selection {
+    background: #F69C9D;
+}
+
+::-moz-selection {
+    background: #F69C9D;
+}
+
+h2 {
+    font-family: "Gochi Hand", Calibri, sans-serif;
+    font-size: 1.5em;
+    line-height: 1;
+    margin: 0.5em;
+}
+
+div.catCare{
+    width: 60%;
+    padding-top: 1%;
+	flex-direction: column;
+    justify-content: center;
+	align-items: center;
+}
+
+div.float{
+/*	background-color: #e2d6c8;*/
+    position: relative;
+	margin-top: 1em;
+    margin-bottom: 1em;
+	width: 100%;
+	color: black;
+    font-family: Calibari, sans-serif;
+    font-size: 1em;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+    text-align: justify;
 }
 
 header {
@@ -167,6 +179,10 @@ a:active {
     font-weight: bold;
     font-family: "Gochi Hand", Calibri, sans-serif;
 }
+
+/* /////////////////////////////
+///////// MEDIA QUERY //////////
+///////////////////////////// */
 
 @media screen and (max-width: 1200px) {
     #careContent {
