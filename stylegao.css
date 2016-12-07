@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+.contact_imfo {
+	width: 80%;
+	height: 368px;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+	margin: 0 auto;
+	font-family: GoxhiHand-Regular;
+	margin-bottom: 30px;
+	font-family: 'Gochi Hand', cursive;
+}
+
+.map {
+	width: 495px;
+	height: 368px;
+	overflow: hidden;
+}
+
+.map img{
+	width: 100%;
+	height: 100%;
+	flex-grow: 1;
+	justify-content: center;
+	align-items:flex-start;
+	border: 1px solid black;
+}
+
+.basic_imfo{
+	width: 495px;
+	height: 368px;
+	flex-grow: 1;
+	justify-content: center;
+	align-items:flex-start;
+	border: 1px solid black;
+	display: flex;
+	flex-direction:column;
+	padding: 30px;
+}
+.basic_imfo_text{
+	width: 100%;
+}
+
+.basic_imfo h3{
+	width: 200px;
+	font-size: 1.5em;
+	background-color:#FFC0CB;
+	padding: 3px;
+}
+
+.contact_us{
+	width: 80%;
+	height: 450px;
+	border: 1px solid black;
+	margin: 0 auto;
+	font-family: "Gochi Hand", Calibri, sans-serif;
+}
+
+#subject {
+	width: 100%;
+	text-align: center;
+	font-size: 1.5em;
+	background-color:#FFC0CB;
+	font-family: "Gochi Hand", Calibri, sans-serif;
+}
+
+.information{
+	width: 50%;
+	margin: 0 auto;
+}
+
+.contact-form{
+	width: 100%;
+}
+input{
+	margin-bottom: 30px;
+	font-family: 'Gochi Hand', cursive;
+	font-size: 1em;
+}
+
+#btn-one{
+	width:100px;
+}
+
+.button{
+	text-align: center;
+	margin: 10px;
+}
+
+.form{
+	width: 100%;
+}
+
+.field_name{
+	width: 100%;
+	height: 33px;
+
+}
+
+.field_email{
+	width: 100%;
+	height: 33px;
+}
+
+.phone_number{
+	width: 100%;
+	height: 33px;
+}
+
+.field-message{
+	width: 100%;
+	height: 105px;
+	font-family: 'Gochi Hand', cursive;
+	font-size: 1em;
+}
+
+
+@media screen and (max-width: 800px) {
+	.contact_imfo {
+		display: block;
+		height: 736px;
+	}
+	.map {
+		width: 100%;
+	}
+	.basic_imfo{
+		width: 100%;
+	}
+
+	.information{
+	width: 60%;
+	}
+}
