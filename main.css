@@ -19,11 +19,15 @@ body{
 h1{
 	text-align: left;
 	font-size: 1.5em;
+	margin-top: 0.5em;
+	font-family: "Gochi Hand", Calibri, sans-serif;
 }
 
 ul{
 	list-style-type: none;
 	list-style-position: none;
+	font-family: "Gochi Hand", Calibri, sans-serif;
+	font-size: 1.25em;
 }
 
 /* unvisited link */
@@ -45,19 +49,6 @@ a.active{
 	border-bottom: 1px solid pink;
 }
 
-/*EXTERNAL FONTS*/
-@font-face {
-  font-family: "Gochi Hand";
-  src: url(https://fonts.googleapis.com/css?family=Gochi+Hand) format("truetype");
-}
-h1, ul, div { font-family: "Gochi Hand", sans-serif }
-
-@font-face{
-	font-family: "Calibri";
-	src: url(https://www.fonts.com/font/microsoft-corporation/calibri?QueryFontType=Web&src=GoogleWebFonts) format("truetype");
-}
-p { font-family: sans-serif }
-
 
 
 /*===============================
@@ -65,9 +56,10 @@ ABOUT
 ================================*/
 
 .welcome{
-	width: 80%;
+	width: 60%;
 	margin-left: 10%;
 	text-align: justify;
+	margin: 0 auto;
 }
 
 /*Success Stories*/
@@ -108,7 +100,8 @@ div#cat.float{
 	display: flex;
 	justify-content: flex-start;
 	text-align: left;
-	background-color: #d3d3d3;
+	background-color: white;
+	border: solid 1px grey;
 }
 
 /*absolute*/
@@ -121,6 +114,7 @@ div#cat.float{
 	color: white;
 	font-size: 2em;
 	text-align: center;
+	font-family: "Gochi Hand", Calibri, sans-serif;
 }
 
 #story{
@@ -134,18 +128,52 @@ div#cat.float{
 	padding: 1em;
 	margin: 0;
 	text-align: left;
+	font-family: Calibri, sans-serif;
 }
 
-/*BOOKING FORM*/
-.book{
+
+/*===============================
+BOOKING FORM
+================================*/
+.contact_us{
 	width: 60%;
-	margin: 1em auto;
-	background-color: grey;
+	margin: 0 auto;
+	margin-bottom: 6em;
+	font-family: "Gochi Hand", Calibri, sans-serif;
+	border: solid 1px grey;
 }
 
-form{
-	padding: 1em;
+#subject {
+	width: 100%;
+	margin: .5em;
+	text-align: center;
+	font-size: 1.5em;
+	font-family: "Gochi Hand", Calibri, sans-serif;
 }
+
+.information{
+	width: 50%;
+	margin: 0 auto;
+}
+
+input{
+	margin-bottom: 1em;
+	font-family: "Gochi Hand", Calibri, sans-serif;
+}
+
+#btn-one{
+	width:100px;
+	text-align: center;
+	margin: 10px;
+}
+
+.a{
+	padding-left: 0.5em;
+	width: 100%;
+	height: 33px;
+
+}
+
 
 /*===============================
 FOOTER
@@ -162,21 +190,40 @@ MEDIA QUERIES
 ================================*/
 
 /*ONE Column Layout*/
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 1030px) {
 	div.float, #floatr{
 		flex-direction: column;
 	}
+
 	img{
 		width: 100%;
 	}
+
+	.ab{
+		visibility: hidden;
+	}
+
+	#story,div#cat.float, .contact_us {
+		width: 60%;
+		margin: 1em auto;
+	}
+
+	.contact_us {
+		margin-bottom: 6em;
+	}
+
+	/*Footer display as row*/
 	.social{
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		margin: 0;
 	}
+}
 
-	.ab{
-		visibility: hidden;
+@media screen and (max-width: 560px) {
+	div.float, #floatr, .welcome, #story,div#cat.float, .contact_us {
+		width: 90%;
 	}
+
 }

@@ -4,6 +4,7 @@
         <meta charset=utf-8>
         <link rel="stylesheet" href="normalize.css"/>
         <link rel="stylesheet" href="main.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet"> 
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0"/>
         <title>Team Cat Rescue</title> 
     </head>
@@ -35,22 +36,28 @@
 
 <!-- CAT'S STORY -->
         <div class='float' id='story'>
+            <h1> Leo's Story </h1>
             <p>Leo is a handsome boy and an absolute sweetheart. He has beautiful green eyes and a bushy tail. Leo also loves his chin rubs. Leo loves other cats. He does not always like being picked up but he is getting more comfortable with it everyday.</p>
             <p>Leo was rescued after he was found wondering around a backyard. He was scared and had an eye infection. It took a few weeks to have him neutered, vaccinate and his eye treated. He now weighs 15 lbs and he is fully recovered.</p>
         </div>
 
-<!-- FORM TO BOOK APPOINTMENT -->
-        <div class='book'>
-            <form>
-                <!-- <h1>Book a visit!</h1> -->
-                <input type="text" placeholder="Full Name" name="fullname"><br/>
-                <input type="text" placeholder="Email" name="email"><br/>
-                <input type="text" placeholder="Phone Number" name="phonenumber"><br/>
-                <input type="text" placeholder="Date" name="date"><br/>
-                <input type="text" placeholder="Time" name="time">
-            </form>
-        </div>
+
+    <div class='contact_us'>
+        <section id='set_imformation' class='information'>      
+            <h3 id='subject'>Contact Us</h3>
+                <form class='contact-form' method='POST' action='message.php'>
+                        <div class="form">
+                            <input class="a" name="name" placeholder="Full name" />
+                            <input class="a" name="email" placeholder="Email" />
+                            <input class="a" name="phone" placeholder="Phone Number" />
+                            <input type="date" class="a" name="date" placeholder="Date (YYYY-MM-DD)" />
+                            <input type="time" class="a" name="time" placeholder="Time (12:34 AM)" />
+                        </div>
+                        <div class="button"><input type="submit" value='SUBMIT' id="btn-one"/></div>            
+                </form> 
+        </section>  
     </div>
+
 
         <footer> 
             <div class='social'>
