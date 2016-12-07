@@ -3,7 +3,7 @@
 }
 
 .contact_imfo {
-	width: 80%;
+	width: 60%;
 	height: 368px;
 	display: flex;
 	flex-direction: row;
@@ -52,7 +52,7 @@
 }
 
 .contact_us{
-	width: 80%;
+	width: 60%;
 	height: 450px;
 	border: 1px solid black;
 	margin: 0 auto;
@@ -123,6 +123,6 @@ input{
 	}
 
 	.information{
-	width: 60%;
+		width: 60%;
 	}
 }
