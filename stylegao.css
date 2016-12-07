@@ -76,7 +76,7 @@
 	width: 100%;
 }
 input{
-	margin-bottom: 1em;
+	margin-bottom: 30px;
 	font-family: 'Gochi Hand', cursive;
 	font-size: 1em;
 }
@@ -94,23 +94,31 @@ input{
 	width: 100%;
 }
 
-.a{
-	padding-left: 0.5em;
+.field_name{
 	width: 100%;
 	height: 33px;
 
 }
 
+.field_email{
+	width: 100%;
+	height: 33px;
+}
+
+.phone_number{
+	width: 100%;
+	height: 33px;
+}
+
 .field-message{
 	width: 100%;
 	height: 105px;
-	padding: .5em;
 	font-family: 'Gochi Hand', cursive;
 	font-size: 1em;
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
 	.contact_imfo {
 		display: block;
 		height: 736px;
@@ -123,6 +131,12 @@ input{
 	}
 
 	.information{
-		width: 60%;
+	width: 60%;
+	}
+}
+
+@media screen and (max-width: 560px) {
+	.contact_imfo, .contact_us{
+		width: 80%;
 	}
 }
