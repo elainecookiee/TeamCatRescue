@@ -56,8 +56,9 @@
 
 
  <form method='get' action='index.php'>
-	<select name='breed'>
-	<option value="Breed">Breed</option>
+	<select name='breedForm'>
+	<option value="Breed" selected="selected">Breed</option>
+	
 	<?php
 
 	$db = new PDO('mysql:host=localhost;dbname=cats;charset=utf8', 'root', 'root');
@@ -82,28 +83,24 @@
 		}
 	?>
 	</select>
-	<input type='submit' />
-</form>
-
-<form method='get' action='index.php'>
-            <select name='age'/>
-            	<option value="Age">Age</option>
+	<select name='age'>
+            	<option value="Age" selected="selected">Age</option>
             	<option value="Adult">Adult</option>
             	<option value="Young">Young</option>
             	<option value="Elder">Elder</option>
             	<option value="Kitten">Kitten</option>
             </select>
-            <input type='submit' />
-        </form>
 
-<form method='get' action='index.php'>
-            <select name='gender'/>
-            	<option value="Gender">Gender</option>
+            <select name='gender'>
+            	<option value="Gender" selected="selected">Gender</option>
             	<option value="Male">Male</option>
             	<option value="Female">Female</option>
             </select>
             <input type='submit' />
-        </form>
+
+</form>
+
+
 
 
 
@@ -113,17 +110,55 @@
 	
 <?php
 
+
+	if( isset($_GET['breedForm'])&& $_GET['breedForm']!="Breed" ) {
+	           $breedSearch = $_GET['breedForm'];
+            } else {
+	           $breedSearch = '%';
+            };
+
+    if( isset($_GET['age'])&& $_GET['age']!='Age' ) {
+	           $ageSearch = $_GET['age'];
+            } else {
+	           $ageSearch = "%";
+            };
+
+    if( isset($_GET['gender'])&& $_GET['gender']!='Gender' ) {
+	           $genderSearch = $_GET['gender'];
+            } else {
+	           $genderSearch = "%";
+            };
+
     $db = new PDO('mysql:host=localhost;dbname=cats;charset=utf8', 'root', 'root');
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-	$sql = "SELECT * 
-	FROM `cat` INNER JOIN `breed`
-	ON (`cat`.`bid`=`breed`.`bid`)";
+	$sql = "
+	SELECT * 
+	FROM `cat`
+	INNER JOIN `breed`
+	ON (`cat`.`bid`=`breed`.`bid`)
+	WHERE `breed`.`bid` LIKE :breedForm AND `age` LIKE :age AND `gender`LIKE :gender
+	";
+	
+
+	// $sql = "SELECT * 
+	// 	FROM `cat` INNER JOIN `breed`
+	// 	ON (`cat`.`bid`=`breed`.`bid`)
+	// 	WHERE `breed` = :breed AND `gender` = :gender AND `age`= :age" ;
 
 	$result = $db->prepare($sql);
-    $result -> execute();
+    $result -> execute(
+    	array(
+  ':breedForm' => $breedSearch,
+ 	':age' => $ageSearch,
+  ':gender'   => $genderSearch)
+    	);
     $data = $result->fetchAll();
+
+    // var_dump($breedSearch);
+    // var_dump($ageSearch);
+    // var_dump($genderSearch);
 
 	$localID = -1;
 for ($i = 0; $i < sizeof($data); $i++ ) {
