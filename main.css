@@ -14,6 +14,7 @@ html{
 body{
 	margin:0;
 	text-align: center;
+	background-color: #f9f5ed;
 }
 
 h1{
@@ -71,7 +72,8 @@ div.success{
 }
 
 div.float{
-	background-color: #e2d6c8;
+	border: solid 1px #E2D6D6;
+	background-color: white;
 	margin: 1em;
 	width: 60%;
 	color: grey;
@@ -101,7 +103,7 @@ div#cat.float{
 	justify-content: flex-start;
 	text-align: left;
 	background-color: white;
-	border: solid 1px grey;
+	border: solid 1px #E2D6D6;
 }
 
 /*absolute*/
@@ -125,9 +127,8 @@ div#cat.float{
 }
 
 #story p{
-	padding: 1em;
-	margin: 0;
-	text-align: left;
+	width: 80%;
+	text-align: justify;
 	font-family: Calibri, sans-serif;
 }
 
@@ -136,6 +137,7 @@ div#cat.float{
 BOOKING FORM
 ================================*/
 .contact_us{
+	background-color: white;
 	width: 60%;
 	margin: 0 auto;
 	margin-bottom: 6em;
@@ -161,11 +163,27 @@ input{
 	font-family: "Gochi Hand", Calibri, sans-serif;
 }
 
-#btn-one{
-	width:100px;
-	text-align: center;
-	margin: 10px;
-}
+.input{
+	background-color: #f69c9d;
+	-moz-border-radius:9px;
+	-webkit-border-radius:9px;
+	border-radius:9px;
+	border:0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: 'Gochi Hand', cursive;
+	font-size: 16pt;
+	padding:8px 24px;
+	text-decoration:none;
+	}
+	.input:hover {
+		background-color:#c96a6b;
+	}
+	.input:active {
+		position:relative;
+		top:1px;
+	}
 
 .a{
 	padding-left: 0.5em;
