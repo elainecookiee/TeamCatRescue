@@ -119,8 +119,8 @@ div#cat.float{
 /*absolute*/
 .ab{
 	position: absolute;
-	left: 0;
-	bottom: 0;
+	left: 5%;
+	bottom: 15%;
 	width: 50%;
 	background: rgba(0, 0, 0, 0.2);
 	color: white;
