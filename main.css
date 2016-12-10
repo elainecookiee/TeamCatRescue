@@ -14,13 +14,13 @@ html{
 body{
 	margin:0;
 	text-align: center;
-	background-color: #f9f5ed;
+	background: url("images/patternBg.png");
 }
 
 h1{
 	text-align: left;
 	font-size: 1.5em;
-	margin-top: 0.5em;
+	margin-top: 1em;
 	font-family: "Gochi Hand", Calibri, sans-serif;
 }
 
@@ -102,8 +102,18 @@ div#cat.float{
 	display: flex;
 	justify-content: flex-start;
 	text-align: left;
-	background-color: white;
-	border: solid 1px #E2D6D6;
+}
+
+#catPic{
+	position: absolute;
+	top: 20%;
+	left: 5%;
+}
+
+.float ul{
+	position: absolute;
+	top: 20%;
+	left: 55%;
 }
 
 /*absolute*/
@@ -130,8 +140,9 @@ div#cat.float{
 	width: 80%;
 	text-align: justify;
 	font-family: Calibri, sans-serif;
+	margin: 0;
+	padding-bottom: 1.5em;
 }
-
 
 /*===============================
 BOOKING FORM
@@ -142,12 +153,11 @@ BOOKING FORM
 	margin: 0 auto;
 	margin-bottom: 6em;
 	font-family: "Gochi Hand", Calibri, sans-serif;
-	border: solid 1px grey;
+	border: solid 1px #E2D6D6;
 }
 
 #subject {
 	width: 100%;
-	margin: .5em;
 	text-align: center;
 	font-size: 1.5em;
 	font-family: "Gochi Hand", Calibri, sans-serif;
@@ -202,6 +212,9 @@ footer{
 	padding: 1em;
 }
 
+footer img{
+	margin: auto 0.5em;
+}
 
 /*===============================
 MEDIA QUERIES
@@ -217,8 +230,23 @@ MEDIA QUERIES
 		width: 100%;
 	}
 
+	#catPic{
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+
+	#tag{
+		display: none;
+	}
+
 	.ab{
 		visibility: hidden;
+	}
+	
+	.float ul{
+		position: relative;
+		left: 0;
 	}
 
 	#story,div#cat.float, .contact_us {
