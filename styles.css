@@ -126,21 +126,25 @@ nav {
 nav>a {
     padding-left: 1em;
     padding-right: 1em;
+    font-size: 1.5em;
 }
 
 nav>a:visited {
     padding-left: 1em;
     padding-right: 1em;
+    font-size: 1.5em;
 }
 
 nav>a:hover {
     padding-left: 1em;
     padding-right: 1em;
+    font-size: 1.5em;
 }
 
 nav>a:active {
     padding-left: 1em;
     padding-right: 1em;
+    font-size: 1.5em;
 }
 
 a {
