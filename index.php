@@ -165,6 +165,25 @@
 				flex-wrap: wrap;
 			}
 
+/*footer*/
+			footer{
+				width:100%;
+				background-color: grey;
+				padding: 1em;
+			}
+
+			footer img{
+				margin: auto 0.5em;
+			}
+
+			.social{
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				margin: 0;
+			}
+
+
 /* Mobile */
 @media screen and (max-width : 425px){
 	/* Styles */
@@ -388,7 +407,9 @@ if( isset($_GET['gender']) ){
 	</div>
 </div>
 
-
+<?php
+        include('footer.php');
+    ?>
 
 <script>
 window.onload = function() {

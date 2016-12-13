@@ -2,6 +2,52 @@
   box-sizing: border-box;
 }
 
+/*===================*/
+/*NEW NAV*/
+/*===================*/
+
+/* Main website logo */
+#mainLogo {
+    width: 5%;
+    position: absolute;
+    left: 5%;
+}
+
+nav {
+   display: flex;
+   position:relative;
+   background-color: #ababab ;
+   background-image: url(images/bannerHeader.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 100px;
+   width: 100%;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.5em;
+}
+
+nav>a, nav>a:visited, nav>a:hover, nav>a:active {
+   padding-left: 1em;
+   padding-right: 1em;
+}
+
+a, a:visited, a:active {
+    padding: 5px;
+    text-decoration: none;
+    font-family: Calibri, sans-serif;
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: "Gochi Hand", Calibri, sans-serif;
+}
+
+a:hover {
+    color: #F69C9D;
+}
+
+
+
 body{
 	background: url("images/patternBg.png");
 }
@@ -170,3 +216,5 @@ footer img{
 		width: 60%;
 	}
 }
+
+
