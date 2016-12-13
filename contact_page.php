@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -5,7 +7,17 @@
 	<meta charset="utf-8">
 	<link rel='stylesheet' href='stylegao.css' />
 	<link href="https://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet">
+	<meta name="viewpoint" content="width=device-width, initial-scale=1.0"/>
+	<!-- The browser will automatically choose the appropriate FavIcon size. -->
+	<link rel="icon" type="image/png" href="assets/fav16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/fav32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/fav48.png" sizes="48x48">
 </head>
+
+    <?php
+        include('header.php');
+    ?>
+
 
 <body>
 	<div class='contact_imfo'>
@@ -77,8 +89,12 @@
 				</form>	
 		</section>	
 	</div>
-
-</body>
+	
+	<?php
+        include('footer.php');
+    ?>
+    
+	</body>
 </html>
 
 	
