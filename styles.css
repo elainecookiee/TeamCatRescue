@@ -59,6 +59,26 @@
 	padding: 1em;
 }
 
+/*===============================
+FOOTER
+================================*/
+
+footer{
+	background-color: grey;
+	padding: 1em;
+}
+
+footer img{
+	margin: auto 0.5em;
+}
+
+.social{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 0;
+}
+
 /* //////////////////////
 ///////// MAIN //////////
 ////////////////////// */
