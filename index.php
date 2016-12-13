@@ -94,13 +94,11 @@
 			}
 
 			.gallery {
+				width: 100%;
 				display: flex;
+				flex-direction: row;
 				justify-content: center;
 				flex-wrap: wrap;
-			}
-
-			.each {
-				background-color: white;
 			}
 
 			.thumnail {
@@ -126,6 +124,18 @@
 				margin: none;
 			}
 
+			/*FEATURED*/
+			.featured{
+				width: 100%;
+				display: flex;
+				background-color: grey;
+			}
+
+			.featuredCat{
+				width: 40%;
+				height: auto;
+				margin: 1em;
+			}
 		</style>
 
 
@@ -239,7 +249,6 @@
 </form>
 </div>
 
-<div class="gallery">	
 
 	
 	
@@ -291,34 +300,52 @@
     	);
     $data = $result->fetchAll();
 
+    // if (!$val) {
+    // 	echo "TESTINGLOLAJFASDKJFJSKDFJKSDJF";
+    // };
+
     // var_dump($breedSearch);
     // var_dump($ageSearch);
     // var_dump($genderSearch);
 
-	$localID = -1;
-for ($i = 0; $i < sizeof($data); $i++ ) {
+    echo "<div class='gallery'>";
 
-	if( $localID != $data[$i]['id'] ) {
-		if( $localID > -1 ) {
-		 	 echo "</div>";
-		};
-		echo "<div class='each'><img class=\"thumnail\" src=\"images/" . $data[$i]['image'] . "\">" ;
-		echo "<div><ul class='info'><li class='catname'>" . $data[$i]['name']. "</li>
+	for ($i = 0; $i < sizeof($data); $i++ ) {
+		echo "<div class='test'>";
+		echo "<img class='thumnail' src=\"images/" . $data[$i]['image'] . "\">" ;
+		echo "<ul class='info'><li class='catname'>" . $data[$i]['name']. "</li>
 		<li class='detail'>" . $data[$i]['breed']." • ".$data[$i]['age']." • ".$data[$i]['gender']."</li>
-		</ul>
-		</div>";
-		}
-		else {
-			"<div><ul class='info'><li class='catname'>" . $data[$i]['name']. "</li>
-		<li class='detail'>" . $data[$i]['breed']." • ".$data[$i]['age']." • ".$data[$i]['gender']."</li>
-		</ul>
-		</div>";
-		}
-};
+		</ul></div>";
+	};
+
+	echo "</div>";
+
 
 ?>
 
 </div>
+
+
+<!-- Featured Cats -->
+<div class="featured">
+	<div class="featuredCat"><img src='images/wigglebutt2.jpg'/>
+		<ul>
+			<li>Featured Cat 1</li>
+		</ul>
+	</div>
+	<div class="featuredCat"><img src='images/wigglebutt2.jpg'/>
+		<ul>
+			<li>Featured Cat 1</li>
+		</ul>
+	</div>
+	<div class="featuredCat"><img src='images/wigglebutt2.jpg'/>
+		<ul>
+			<li>Featured Cat 1</li>
+		</ul>
+	</div>
+</div>
+
+
 
 <script>
 window.onload = function() {
