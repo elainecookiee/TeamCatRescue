@@ -114,6 +114,10 @@ nav {
     display: flex;
     position:relative;
     background-color: #ababab;
+    background-image: url(images/bannerHeader.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100px;
     width: 100%;
     align-items: center;
