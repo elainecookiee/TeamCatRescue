@@ -1,6 +1,6 @@
  <?php
 
-    $db = new PDO('mysql:host=localhost;dbname=book_an_appointment;charset=utf8', 'root', 'root');
+    $db = new PDO('mysql:host=localhost;dbname=cats;charset=utf8', 'root', 'root');
 
                 $sql = "SELECT * FROM appointment_message
                         ORDER BY `date`";
