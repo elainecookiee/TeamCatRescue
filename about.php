@@ -16,22 +16,10 @@
 
     <body>
     
-        <header> 
-            <nav>
-                <img id="mainLogo" src="assets/logo.png" />
-                <a href="index.php" class="topNav">Home</a>
-                <a href="about.html" class="topNav">About</a>
-                <a href="catcare.html" class="topNav">Cat Care</a>
-                <a href="contact_page.html" class="topNav">Contact</a>
-            </nav>
-        </header>
+    <?php
+        include('header.php');
+    ?>
     
-<!--         <nav>
-            <a href="#">Home</a>
-            <a href="about.html" class="active">About</a>
-            <a href="catcare.html">Cat Care</a>
-            <a href="#">Contact</a>
-        </nav> -->
 
 <!-- WELCOME MESSAGE -->
         <div class='welcome'>
