@@ -103,10 +103,6 @@
                 </div> <!-- float -->
             </div> <!-- catCare -->
         </div> <!-- careOrg -->
-        <footer> 
-                <div class="bottomNav">
-                    <!-- Social Media icons can go here, maybe, like FB, Twitter, etc. Also, maybe smaller nav like many sites. -->
-                </div>
-        </footer>
-    </body>
-</html>
+        <?php
+        include('footer.php');
+        ?>
