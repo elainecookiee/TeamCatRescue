@@ -1,3 +1,9 @@
+<?php
+
+    $db = new PDO('mysql:host=localhost;dbname=cats;charset=utf8', 'root', 'root');
+
+?>
+
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -14,15 +20,12 @@
 
     <body>
 
-        <header> 
-            <nav>
-                <img id="mainLogo" src="assets/logo.png" />
-                <a href="index.php" target="_self" class="topNav">Home</a>
-                <a href="about.html" target="_self" class="topNav">About</a>
-                <a href="catcare.html" target="_self" class="topNav">Cat Care</a>
-                <a href="contact_page.html" target="_self" class="topNav">Contact</a>
-            </nav>
-        </header>
+        <nav>
+            <a href="index.php">Home</a>
+            <a href="about.php">About</a>
+            <a href="catcare.php">Cat Care</a>
+            <a href="contact_page.php">Contact</a>
+        </nav>
 
 <!-- INDIVIDUAL CAT-->
 
@@ -52,8 +55,61 @@
 
     <div class='contact_us'>
         <section id='set_imformation' class='information'>      
+        <?php
+                if( isset($_POST['name']) ) {
+                    $addname = $_POST['name'];
+                }
+                if( isset($_POST['email']) ) {
+                    $addemail = $_POST['email'];
+                }
+                if( isset($_POST['phone']) ) {
+                    $addphone = $_POST['phone'];
+                }
+                if( isset($_POST['date']) ) {
+                    $adddate = $_POST['date'];
+                }
+                if( isset($_POST['time']) ) {
+                    $addtime = $_POST['time'];
+                }
+
+
+                if( isset($addname) && isset($addemail) && isset($addphone) && isset($adddate) && isset($addtime) ) {
+
+                    $sql = "INSERT INTO `appointment_message` (`name`,`email`,`phone`,`date`,`time`) VALUES ( ?, ?, ?, ?, ? )";
+                    $query = $db->prepare( $sql );
+
+
+                    try {
+                        $result = $query->execute( [ $addname, $addemail, $addphone, $adddate, $addtime] );
+                    } catch ( PDOException $err ) {
+                        echo "ERROR: ".$err->getMessage();
+                    }
+
+                }
+            ?>
+
+  
+<!-- window -->
+        <?php
+            $name = isset($_POST['name']) ? $_POST['name'] : null;
+            $email = isset($_POST['email']) ? $_POST['email'] : null;
+            $phone = isset($_POST['phone']) ? $_POST['phone'] : null;
+            $date = isset($_POST['date']) ? $_POST['date'] : null;
+            $time = isset($_POST['time']) ? $_POST['time'] : null;
+            
+            if ( isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['date']) && isset($_POST['time']) ) {            
+            
+                echo '<script language="javascript">';
+
+                echo 'alert("Dear '.$name.' you just Successfully made an appointment! Your appointment is: '.$date.' at '.$time.'.");';
+                
+                echo '</script>';
+            } 
+
+        ?> 
+
             <h3 id='subject'>Book a Visit!</h3>
-                <form class='contact-form' method='POST' action='message.php'>
+                <form class='contact-form' method='POST' action='individual_Toast.php'>
                         <div class="form">
                             <input class="a" name="name" placeholder="Full name" />
                             <input class="a" name="email" placeholder="Email" />

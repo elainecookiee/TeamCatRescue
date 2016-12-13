@@ -18,10 +18,10 @@
     <body>
 
         <nav>
-            <a href="#">Home</a>
-            <a href="about.html">About</a>
-            <a href="catcare.html">Cat Care</a>
-            <a href="#">Contact</a>
+            <a href="index.php">Home</a>
+            <a href="about.php">About</a>
+            <a href="catcare.php">Cat Care</a>
+            <a href="contact_page.php">Contact</a>
         </nav>
 
 <!-- INDIVIDUAL CAT-->
