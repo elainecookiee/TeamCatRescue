@@ -203,8 +203,8 @@
 	<nav class="mainnav" id="home">
 	    <a href="index.php">Home</a>
 	    <a href="about.php">About</a>
-	    <a href="catcare.html">Cat Care</a>
-	    <a href="contact_page.html">Contact</a>
+	    <a href="catcare.php">Cat Care</a>
+	    <a href="contact_page.php">Contact</a>
     </nav>
     <div class="logo">
     <a href="index.php"><img id="logo" src="assets/logo_main.png" alt="team cat rescue logo" width=160px height="160px" /></a></div>
