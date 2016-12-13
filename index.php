@@ -8,7 +8,7 @@
 
 		<style type="text/css">
 			body {
-				min-width: 360px;
+				min-width: 460px;
 				margin:0;
  				background: url("images/patternBg.png");
  				display: flex;
@@ -22,22 +22,21 @@
 				padding:1em;
 			}
 
-			.mainnav {
-
-			}
-
 			nav a {
 				padding: 1em;
 				color:white;
 				text-decoration: none;
 				font-family: 'Gochi Hand', cursive;
 				font-size: 18pt;
-
 			}
 
 			a {
 				text-decoration: none;
 				color:#545454;
+			}
+
+			a:hover {
+				color: #F69C9D;
 			}
 
 			.msg {
@@ -82,7 +81,6 @@
 			input {
 				background-color: #f69c9d;
 				-moz-border-radius:9px;
-				-webkit-border-radius:9px;
 				border-radius:9px;
 				border:0;
 				display:inline-block;
@@ -104,15 +102,16 @@
 
 			.banner {
 				width: 100%;
-				height: 500px;
+				height: 520px;
 				background-image: url("images/banner.jpg");
 				background-repeat: no-repeat;
 				background-position: center;
-				background-size: 100%;
+				background-size:cover;
+		
 			}
 
 			.gallery {
-				display: none;
+				display: flex;
 				max-width: 1280px;
 				flex-direction: row;
 				justify-content: center;
@@ -148,6 +147,7 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
+				background-color: #f0e6d3;
 			}
 
 			.title{
@@ -165,19 +165,25 @@
 				flex-wrap: wrap;
 			}
 
+/* Mobile */
+@media screen and (max-width : 425px){
+	/* Styles */
+		input {
+			padding:1px 24px;
+		}
 
+}
 		</style>
 
-
-
 	</head>
+
 <body>
 
 <div class="banner">
 <!--Navigation Bar-->
 	<nav class="mainnav" id="home">
 	    <a href="index.php">Home</a>
-	    <a href="about.html">About</a>
+	    <a href="about.php">About</a>
 	    <a href="catcare.html">Cat Care</a>
 	    <a href="contact_page.html">Contact</a>
     </nav>
@@ -185,7 +191,7 @@
     <a href="index.php"><img id="logo" src="assets/logo_main.png" alt="team cat rescue logo" width=160px height="160px" /></a></div>
 
 <!--Filters-->
- <form class="filter" method='get' action='index.php'>
+ <form class="filter" method='get' action='index.php' id="failcat">
 	<select name='breedForm'>
 	<option value="Breed" selected="selected">Breed</option>
 	
@@ -226,7 +232,7 @@
             	<option value="Male">Male</option>
             	<option value="Female">Female</option>
             </select>
-            <input type='submit' value="Find My Match" onclick="return showGallery()"/>
+            <input type='submit' value="Find My Match"/>
 
 </form>
 
@@ -332,10 +338,12 @@
 
 // if no result found msg
     if (empty($data)) { 
-    echo '<img class="thumnail" src="images/cat2.png" /><div class="msg">Sorry, no matching file found!</div>'; 
+    echo '<img class="thumnail" src="images/cat2.png" /><div class="msg">Sorry, no matching file found!</div>';
+    echo "<script>location.hash = '#failcat'</script>";
 }
 
 // if results found
+if( isset($_GET['gender']) ){
     echo "<div class='gallery'>";
 
 	for ($i = 0; $i < sizeof($data); $i++ ) {
@@ -348,7 +356,7 @@
 	};
 
 	echo "</div>";
-
+}
 
 ?>
 
@@ -388,7 +396,7 @@ window.onload = function() {
 }
 
 function scrollMenuTop() {
-	var mq = window.matchMedia("(min-width:360px)");
+	var mq = window.matchMedia("(min-width:460px)");
 	var scrolled = window.scrollY;
 	var x = document.querySelector(".topfilter");
 	if ((scrolled>500)&&(mq.matches)) 
@@ -398,13 +406,6 @@ function scrollMenuTop() {
 	else { x.style.display = "none"
 	}
 }
-
-function showGallery(){
-	console.log("It's working!");
-	// var y = document.querySelector(".gallery");
-	// if (y.style.display == "none") {
- //    y.style.display = "flex";}
-;}
 
 
 
