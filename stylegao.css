@@ -3,7 +3,7 @@
 }
 
 body{
-	background-color: #f9f5ed;
+	background: url("images/patternBg.png");
 }
 
 p{
@@ -17,9 +17,9 @@ p{
 	flex-direction: row;
 	justify-content:space-between;
 	margin: 0 auto;
-	font-family: GoxhiHand-Regular;
+	font-family: "Gochi Hand", Calibri, sans-serif;
 	margin-bottom: 30px;
-	font-family: 'Gochi Hand', cursive;
+	font-family: "Gochi Hand", Calibri, sans-serif;
 }
 
 .map {
@@ -84,7 +84,7 @@ p{
 }
 input{
 	margin-bottom: 1em;
-	font-family: 'Gochi Hand', cursive;
+	font-family: "Gochi Hand", Calibri, sans-serif;
 	font-size: 1em;
 }
 
@@ -97,7 +97,7 @@ input{
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family: 'Gochi Hand', cursive;
+	font-family: "Gochi Hand", Calibri, sans-serif;
 	font-size: 16pt;
 	padding:8px 24px;
 	text-decoration:none;
@@ -130,7 +130,7 @@ input{
 	width: 100%;
 	height: 105px;
 	padding: .5em;
-	font-family: 'Gochi Hand', cursive;
+	font-family: "Gochi Hand", Calibri, sans-serif;
 	font-size: 1em;
 }
 

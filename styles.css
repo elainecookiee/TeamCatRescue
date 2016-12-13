@@ -64,7 +64,7 @@
 ////////////////////// */
 
 body {
-   
+   background: url("images/patternBg.png");
 }
 
 ::selection {
@@ -114,6 +114,9 @@ nav {
     display: flex;
     position:relative;
     background-color: #ababab;
+    background-image: url(images/bannerHeader.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100px;
     width: 100%;
     align-items: center;
@@ -123,21 +126,25 @@ nav {
 nav>a {
     padding-left: 1em;
     padding-right: 1em;
+    font-size: 1.5em;
 }
 
 nav>a:visited {
     padding-left: 1em;
     padding-right: 1em;
+    font-size: 1.5em;
 }
 
 nav>a:hover {
     padding-left: 1em;
     padding-right: 1em;
+    font-size: 1.5em;
 }
 
 nav>a:active {
     padding-left: 1em;
     padding-right: 1em;
+    font-size: 1.5em;
 }
 
 a {
@@ -145,7 +152,7 @@ a {
     text-decoration: none;
     font-family: Calibri, sans-serif;
     font-size: 1em;
-    color: #333333;
+    color: #ffffff;
     font-weight: bold;
     font-family: "Gochi Hand", Calibri, sans-serif;
 }
@@ -155,7 +162,7 @@ a:visited {
     text-decoration: none;
     font-family: Calibri, sans-serif;
     font-size: 1em;
-    color: #333333;
+    color: #ffffff;
     font-weight: bold;
     font-family: "Gochi Hand", Calibri, sans-serif;
 }
@@ -175,7 +182,7 @@ a:active {
     text-decoration: none;
     font-family: Calibri, sans-serif;
     font-size: 1em;
-    color: #333333;
+    color: #ffffff;
     font-weight: bold;
     font-family: "Gochi Hand", Calibri, sans-serif;
 }

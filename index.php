@@ -8,8 +8,12 @@
 
 		<style type="text/css">
 			body {
+				min-width: 360px;
 				margin:0;
-				background-color: #f9f5ed;
+ 				background: url("images/patternBg.png");
+ 				display: flex;
+    			flex-direction: column;
+    			align-items: center;
 			}
 
 			.mainnav, .logo {
@@ -31,15 +35,27 @@
 
 			}
 
+			a {
+				text-decoration: none;
+				color:#545454;
+			}
+
+			.msg {
+				font-family: 'Gochi Hand', cursive;
+				font-size: 18pt;
+				margin: 1em;
+			}
+
 			.filter {
 				display: flex;
     			justify-content: center;
     			padding-top: 3em;
     			margin: 2em;
+    			flex-wrap: wrap;
 			}
 
 			.topfilter {
-				display: flex;
+				display: none;
     			justify-content: center;
 				position: fixed;
 				top:0;
@@ -49,11 +65,13 @@
 				padding-top: 0;
     			margin: 0;
 				background-color: #e6d7b8;
-				display: none;
+				
 			}
 
-			.topfilter form{
+			.topfilter form {
 				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
 			}
 
 			select, input {
@@ -94,13 +112,11 @@
 			}
 
 			.gallery {
-				display: flex;
+				display: none;
+				max-width: 1280px;
+				flex-direction: row;
 				justify-content: center;
 				flex-wrap: wrap;
-			}
-
-			.each {
-				background-color: white;
 			}
 
 			.thumnail {
@@ -113,6 +129,7 @@
 			.catname {
 				font-family: 'Gochi Hand', cursive;
 				font-size: 16pt;
+				list-style-image: url(assets/list.png);
 			}
 
 			.detail {
@@ -126,6 +143,29 @@
 				margin: none;
 			}
 
+			/*FEATURED*/
+			.featuredGallery{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.title{
+				font-family: 'Gochi Hand', cursive;
+				font-size: 24pt;
+				color: #f69c9d;
+				margin-top: 1em;
+			}
+
+			.featured{
+				max-width: 1280px;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+
+
 		</style>
 
 
@@ -136,13 +176,13 @@
 <div class="banner">
 <!--Navigation Bar-->
 	<nav class="mainnav" id="home">
-	    <a href="#home">Home</a>
+	    <a href="index.php">Home</a>
 	    <a href="about.html">About</a>
 	    <a href="catcare.html">Cat Care</a>
 	    <a href="contact_page.html">Contact</a>
     </nav>
     <div class="logo">
-    <img id="logo" src="assets/logo_main.png" alt="team cat rescue logo" width=160px height="160px" /></div>
+    <a href="index.php"><img id="logo" src="assets/logo_main.png" alt="team cat rescue logo" width=160px height="160px" /></a></div>
 
 <!--Filters-->
  <form class="filter" method='get' action='index.php'>
@@ -186,7 +226,7 @@
             	<option value="Male">Male</option>
             	<option value="Female">Female</option>
             </select>
-            <input type='submit' value="Find My Match"/>
+            <input type='submit' value="Find My Match" onclick="return showGallery()"/>
 
 </form>
 
@@ -239,7 +279,6 @@
 </form>
 </div>
 
-<div class="gallery">	
 
 	
 	
@@ -291,34 +330,57 @@
     	);
     $data = $result->fetchAll();
 
-    // var_dump($breedSearch);
-    // var_dump($ageSearch);
-    // var_dump($genderSearch);
+// if no result found msg
+    if (empty($data)) { 
+    echo '<img class="thumnail" src="images/cat2.png" /><div class="msg">Sorry, no matching file found!</div>'; 
+}
 
-	$localID = -1;
-for ($i = 0; $i < sizeof($data); $i++ ) {
+// if results found
+    echo "<div class='gallery'>";
 
-	if( $localID != $data[$i]['id'] ) {
-		if( $localID > -1 ) {
-		 	 echo "</div>";
-		};
-		echo "<div class='each'><img class=\"thumnail\" src=\"images/" . $data[$i]['image'] . "\">" ;
-		echo "<div><ul class='info'><li class='catname'>" . $data[$i]['name']. "</li>
+	for ($i = 0; $i < sizeof($data); $i++ ) {
+		echo "<div><a href='". $data[$i]['html'] ."'>";
+		echo "<img class='thumnail' src=\"images/" . $data[$i]['image'] . "\"></a>" ;
+		echo "<ul class='info'><a href='". $data[$i]['html'] ."'>";
+		echo "<li class='catname'>" . $data[$i]['name']. "</li></a>
 		<li class='detail'>" . $data[$i]['breed']." • ".$data[$i]['age']." • ".$data[$i]['gender']."</li>
-		</ul>
-		</div>";
-		}
-		else {
-			"<div><ul class='info'><li class='catname'>" . $data[$i]['name']. "</li>
-		<li class='detail'>" . $data[$i]['breed']." • ".$data[$i]['age']." • ".$data[$i]['gender']."</li>
-		</ul>
-		</div>";
-		}
-};
+		</ul></div>";
+	};
+
+	echo "</div>";
+
 
 ?>
 
 </div>
+
+
+<!-- Featured Cats -->
+<div class="featuredGallery">
+	<div class="title">Featured Cats</div>
+	<div class="featured">
+		<div><a href="individual_Wigglebutt.html"><img class='thumnail' src='images/wigglebutt2.jpg'/></a>
+			<ul class="info">
+				<li class="catname"><a href="individual_Wigglebutt.html">Wigglebutt</a></li>
+				<li class="detail">Scottish Fold • Kitten • Female</li>
+			</ul>
+		</div>
+		<div><a href="individual_Meowington.html"><img class='thumnail' src='images/Meowington2.jpg'/></a>
+			<ul class="info">
+				<li class="catname"><a href="individual_Meowington.html">Fluffy Meowington</a></li>
+				<li class="detail">Bombay • Kitten • Male</li>
+			</ul>
+		</div>
+		<div><a href="individual_Toast.html"><img class='thumnail' src='images/Toast2.jpg'/></a>
+			<ul class="info">
+				<li class="catname"><a href="individual_Toast.html">Toast</a></li>
+				<li class="detail">Ragamuffin • Young • Male</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
 
 <script>
 window.onload = function() {
@@ -326,7 +388,7 @@ window.onload = function() {
 }
 
 function scrollMenuTop() {
-	var mq = window.matchMedia("(min-width:1024px)");
+	var mq = window.matchMedia("(min-width:360px)");
 	var scrolled = window.scrollY;
 	var x = document.querySelector(".topfilter");
 	if ((scrolled>500)&&(mq.matches)) 
@@ -336,6 +398,16 @@ function scrollMenuTop() {
 	else { x.style.display = "none"
 	}
 }
+
+function showGallery(){
+	console.log("It's working!");
+	// var y = document.querySelector(".gallery");
+	// if (y.style.display == "none") {
+ //    y.style.display = "flex";}
+;}
+
+
+
 </script>
 
 </body>

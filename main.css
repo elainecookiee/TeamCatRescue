@@ -14,13 +14,13 @@ html{
 body{
 	margin:0;
 	text-align: center;
-	background-color: #f9f5ed;
+	background: url("images/patternBg.png");
 }
 
 h1{
 	text-align: left;
 	font-size: 1.5em;
-	margin-top: 0.5em;
+	margin-top: 1em;
 	font-family: "Gochi Hand", Calibri, sans-serif;
 }
 
@@ -31,25 +31,50 @@ ul{
 	font-size: 1.25em;
 }
 
-/* unvisited link */
-a:link {
-}
-
-/* visited link */
-a:visited {
-}
-
 /* mouse over link */
 a:hover {
     cursor:pointer;
 }
 
-/* Active link */
-a.active{
-	color: pink;
-	border-bottom: 1px solid pink;
+/*===================*/
+/*NEW NAV*/
+/*===================*/
+nav {
+   display: flex;
+   position:relative;
+   background-color: #ababab ;
+   background-image: url(images/bannerHeader.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 100px;
+   width: 100%;
+   align-items: center;
+   justify-content: center;
 }
 
+nav a {
+   padding-left: 1em;
+   padding-right: 1em;
+   font-size: 1.5em;
+}
+
+nav a:visited {
+   padding-left: 1em;
+   padding-right: 1em;
+   font-size: 1.5em;
+}
+
+nav a:hover {
+   padding-left: 1em;
+   padding-right: 1em;
+   font-size: 1.5em;
+}
+
+nav a:active {
+   padding-left: 1em;
+   padding-right: 1em;
+   font-size: 1.5em;
+}
 
 
 /*===============================
@@ -102,15 +127,25 @@ div#cat.float{
 	display: flex;
 	justify-content: flex-start;
 	text-align: left;
-	background-color: white;
-	border: solid 1px #E2D6D6;
+}
+
+#catPic{
+	position: absolute;
+	top: 20%;
+	left: 5%;
+}
+
+.float ul{
+	position: absolute;
+	top: 20%;
+	left: 55%;
 }
 
 /*absolute*/
 .ab{
 	position: absolute;
-	left: 0;
-	bottom: 0;
+	left: 5%;
+	bottom: 15%;
 	width: 50%;
 	background: rgba(0, 0, 0, 0.2);
 	color: white;
@@ -130,8 +165,9 @@ div#cat.float{
 	width: 80%;
 	text-align: justify;
 	font-family: Calibri, sans-serif;
+	margin: 0;
+	padding-bottom: 1.5em;
 }
-
 
 /*===============================
 BOOKING FORM
@@ -142,12 +178,11 @@ BOOKING FORM
 	margin: 0 auto;
 	margin-bottom: 6em;
 	font-family: "Gochi Hand", Calibri, sans-serif;
-	border: solid 1px grey;
+	border: solid 1px #E2D6D6;
 }
 
 #subject {
 	width: 100%;
-	margin: .5em;
 	text-align: center;
 	font-size: 1.5em;
 	font-family: "Gochi Hand", Calibri, sans-serif;
@@ -202,6 +237,9 @@ footer{
 	padding: 1em;
 }
 
+footer img{
+	margin: auto 0.5em;
+}
 
 /*===============================
 MEDIA QUERIES
@@ -217,8 +255,23 @@ MEDIA QUERIES
 		width: 100%;
 	}
 
+	#catPic{
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+
+	#tag{
+		display: none;
+	}
+
 	.ab{
 		visibility: hidden;
+	}
+	
+	.float ul{
+		position: relative;
+		left: 0;
 	}
 
 	#story,div#cat.float, .contact_us {
