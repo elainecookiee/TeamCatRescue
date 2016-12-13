@@ -18,6 +18,7 @@
     <body>
 
         <nav>
+            <img id="mainLogo" src="assets/logo.png" />
             <a href="index.php">Home</a>
             <a href="about.php">About</a>
             <a href="catcare.php">Cat Care</a>
