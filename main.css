@@ -31,25 +31,50 @@ ul{
 	font-size: 1.25em;
 }
 
-/* unvisited link */
-a:link {
-}
-
-/* visited link */
-a:visited {
-}
-
 /* mouse over link */
 a:hover {
     cursor:pointer;
 }
 
-/* Active link */
-a.active{
-	color: pink;
-	border-bottom: 1px solid pink;
+/*===================*/
+/*NEW NAV*/
+/*===================*/
+nav {
+   display: flex;
+   position:relative;
+   background-color: #ababab ;
+   background-image: url(images/bannerHeader.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 100px;
+   width: 100%;
+   align-items: center;
+   justify-content: center;
 }
 
+nav a {
+   padding-left: 1em;
+   padding-right: 1em;
+   font-size: 1.5em;
+}
+
+nav a:visited {
+   padding-left: 1em;
+   padding-right: 1em;
+   font-size: 1.5em;
+}
+
+nav a:hover {
+   padding-left: 1em;
+   padding-right: 1em;
+   font-size: 1.5em;
+}
+
+nav a:active {
+   padding-left: 1em;
+   padding-right: 1em;
+   font-size: 1.5em;
+}
 
 
 /*===============================
